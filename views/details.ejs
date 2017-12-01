@@ -1,0 +1,28 @@
+<HTML>
+    
+    <BODY>
+    <h1><%= restaurant.name %></h1>
+    <img src="data:<%= restaurant.mimetype %>;base64, <%= restaurant.image %>" />
+    <p>Borough: <%= restaurant.borough %></p>
+    <p>Cuisine: <%= restaurant.cuisine %></p>
+    <p>Street: <%= restaurant.address.street %></p>
+    <p>Building: <%= restaurant.address.building %></p>
+    <p>Zipcode: <%= restaurant.address.zipcode %></p>
+    <p>Coord: <%= restaurant.address.coord %></p>
+    <p>Rating:</p>
+    <% for (var i = 1; i < grade.length; i++) { %>
+       <p><%= i%>. <%= grade[i].score %> (<%= grade[i].user %>)</p>
+    <% } %>
+    <td><a href=/map?_id=<%= restaurant._id %>> map</a></td>
+    <p>Created by: <%= restaurant.owner %></p>
+    <td><a href=/rate?_id=<%= restaurant._id %>>Rating</td>
+    <a href="/">Back</a>
+    <% if(restaurant.owner == sessionUser){ %>
+        
+        <td><a href=/edit?_id=<%= restaurant._id %>>Edit</td>
+        <td><a href=/delete?_id=<%= restaurant._id %>>Delete</td>
+     <% } %>
+
+    </BODY>
+    
+    </HTML>

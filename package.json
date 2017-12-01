@@ -1,0 +1,20 @@
+{
+  "name": "381frestaurant",
+  "description": "Restaurtant page project",
+  "author": "Leung Man Chung & Wong Kin Wai",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "*",
+    "cookie-session": "*",
+    "ejs": "*",
+    "exif": "*",
+    "express": "*",
+    "express-fileupload": "latest",
+    "mongodb": "*",
+    "node-base64-image": "^1.0.4"
+  },
+  "engine": "node >= 0.10.0",
+  "scripts": {
+    "start": "node server"
+  }
+}

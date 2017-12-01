@@ -1,0 +1,38 @@
+<HTML>
+    
+    <BODY>
+    
+      <head>
+        <title>Restaurants</title>
+        <h1>Restaurants</h1>
+        <h2>Hello, <%= user %>       <a href="/logout"><button>Logout</button></a>
+        </h2>
+      </head>
+      <p>
+        <form action="/searchRestaurant" method="post" enctype="multipart/form-data">
+         Search:<select name="searchCriteria">
+           <option value="name" name="searchName">Name</option>
+           <option value="borough" name="searchBorough">Borough</option>
+           <option value="cuisine" namme="searchCuisine">Cuisine</option>
+         </select>
+        <input type="text" name="searchWord">
+        <input type="submit" name="submit" value = "Search">
+      </form>
+      <a href="/"><button>Clear filter</button></a>
+      </p>
+      <a href="/new">Add Restaurant</a>
+      <% if (restaurants.length > 0) { %>
+        <table>
+          <tr><th>Restaurant Name</th></tr>
+          <% for (var i = 0; i < restaurants.length; i++) { %>
+            <tr>
+              <td><a href=/display?_id=<%= restaurants[i]._id %>><%= restaurants[i].name %></td>
+            </tr>
+          <% } %>
+        </table>
+      <% } else { %>
+        <h1>No information!</h1>
+      <% } %>
+    </BODY>
+    
+    </HTML>

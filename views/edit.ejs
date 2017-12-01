@@ -1,0 +1,20 @@
+<html>
+    <title>Create New Restaurants</title>
+    <body>
+        <h1>edit Restaurant</h1>
+        <form action="/edit" method="post" enctype="multipart/form-data">
+            <p>id: <input name="id" type="text" required value="<%= restaurant._id %>" readonly></p>
+            <p>Name: <input name="name" type="text" required value="<%= restaurant.name %>"></p>
+            <p>Borough: <input name="borough" type="text" value="<%= restaurant.borough %>"></p>
+            <p>Cuisine: <input name="cuisine" type="text" value="<%= restaurant.cuisine %>"></p>
+            <p>Street: <input name="street" type="text" value="<%= restaurant.address.street %>"></p>
+            <p>Building: <input name="building" type="text" value="<%= restaurant.address.building %>"></p>
+            <p>Zipcode: <input name="zipcode" type="text" value="<%= restaurant.address.zipcode %>"></p>
+            <p>GPS Coordinates (lon.): <input name="lon" type="text" value="<%= restaurant.address.coord[0] %>"></p>
+            <p>GPS Coordinates (lat.): <input name="lat" type="text" value="<%= restaurant.address.coord[1] %>"></p>
+            <p>Photo: <input name="filetoupload" type="file" value="<%= restaurant.image %>"></p>
+            <p><input type="submit" name="submit" value = "edit"></p>
+        </form>
+      
+      </body>
+</html>
